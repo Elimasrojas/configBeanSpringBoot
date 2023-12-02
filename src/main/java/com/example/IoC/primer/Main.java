@@ -1,6 +1,8 @@
 package com.example.IoC.primer;
 
 
+import com.example.IoC.inyecciondependencia.CreacionInforme;
+import com.example.IoC.inyecciondependencia.Informe;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,20 +13,27 @@ public class Main {
          * Ejemplos de inversion de control
          * s
          */
-        Empleados empleados = new JefeEmpleado();
+        Empleados empleados = new JefeEmpleado(new Informe());
         System.out.println( empleados.getTareas());
-        Empleados secretario = new SecretarioEmpleado();
+        System.out.println( empleados.getInforme());
+        Empleados secretario = new SecretarioEmpleado(new Informe());
         System.out.println( secretario.getTareas());
-        Empleados director = new DirectorEmpleado();
+        System.out.println( secretario.getInforme() );
+        Empleados director = new DirectorEmpleado(new Informe());
         System.out.println( director.getTareas());
+        System.out.println( director.getInforme());
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         Empleados juan = ctx.getBean("miempleado", Empleados.class);
         System.out.println(juan.getTareas());
+        System.out.println(juan.getInforme());
+        ctx.close();
 
-        ClassPathXmlApplicationContext ctx1 = new ClassPathXmlApplicationContext("applicationContext.xml");
+        /*ClassPathXmlApplicationContext ctx1 = new ClassPathXmlApplicationContext("applicationContext.xml");
         Empleados juan1 = ctx1.getBean("miempleado", Empleados.class);
-        System.out.println(juan1.getTareas());
+        System.out.println(juan1.getTareas());*/
 
 
     }

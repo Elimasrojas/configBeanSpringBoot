@@ -3,10 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Creacion de la dependencia -->
+    <bean id="miInforme" class="com.example.IoC.inyecciondependencia.Informe">
+
+    </bean>
 
     <!-- Definición de un bean llamado "miBean" de tipo MiBean -->
     <bean id="miempleado" class="com.example.IoC.primer.DirectorEmpleado">
-
+        <constructor-arg ref="miInforme"/>
     </bean>
 
 </beans>

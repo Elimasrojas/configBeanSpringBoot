@@ -1,6 +1,13 @@
 package com.example.IoC.primer;
 
+import com.example.IoC.inyecciondependencia.CreacionInforme;
+
 public class SecretarioEmpleado implements Empleados {
+    private final CreacionInforme creacionInforme;
+
+    public SecretarioEmpleado(CreacionInforme creacionInforme) {
+        this.creacionInforme = creacionInforme;
+    }
 
     @Override
     public String getTareas() {
@@ -9,6 +16,6 @@ public class SecretarioEmpleado implements Empleados {
 
     @Override
     public String getInforme() {
-        return "Secretario crea informe";
+        return "Secretario crea informe "+creacionInforme.getInforme();
     }
 }

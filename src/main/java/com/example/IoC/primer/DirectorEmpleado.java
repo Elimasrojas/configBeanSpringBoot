@@ -9,7 +9,11 @@ public class DirectorEmpleado implements Empleados {
      *  2.
      */
 
+    private final CreacionInforme creacionInforme;
 
+    public DirectorEmpleado(CreacionInforme creacionInforme) {
+        this.creacionInforme = creacionInforme;
+    }
 
     @Override
     public String getTareas() {
@@ -18,6 +22,6 @@ public class DirectorEmpleado implements Empleados {
 
     @Override
     public String getInforme() {
-        return "Director crea informe";
+        return "Director crea informe "+creacionInforme.getInforme();
     }
 }
