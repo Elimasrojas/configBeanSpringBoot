@@ -9,6 +9,7 @@ public class Main {
 
         /***
          * Ejemplos de inversion de control
+         * s
          */
         Empleados empleados = new JefeEmpleado();
         System.out.println( empleados.getTareas());
