@@ -39,13 +39,14 @@ public class Main {
 
 
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         // Ojo ya no se usa la interfaz
-        SecretarioEmpleado secre = ctx.getBean("miSecretario", SecretarioEmpleado.class);
-        System.out.println(secre.getTareas());
-        System.out.println(secre.getInforme());
-        System.out.println("Email "+secre.getEmail());
-        System.out.println("Name "+secre.getNombreEmpresa());
+        DirectorEmpleado direct = ctx.getBean("miempleado", DirectorEmpleado.class);
+        System.out.println(direct.getTareas());
+        System.out.println(direct.getInforme());
+        System.out.println("Email "+direct.getEmail());
+        System.out.println("Name "+direct.getNombreEmpresa());
+        ctx.close();
 
 
         /*ClassPathXmlApplicationContext ctx1 = new ClassPathXmlApplicationContext("applicationContext.xml");
