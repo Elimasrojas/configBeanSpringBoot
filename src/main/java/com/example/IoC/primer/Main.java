@@ -27,6 +27,8 @@ public class Main {
         secretario.setCreacionInforme(new Informe());
         System.out.println( secretario.getTareas());
         System.out.println( secretario.getInforme() );
+        System.out.println( secretario.getEmail());
+        System.out.println( secretario.getNombreEmpresa());
 
         /**
          * Creacion con contructor
@@ -37,11 +39,14 @@ public class Main {
 
 
 
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Empleados secre = ctx.getBean("miSecretario", Empleados.class);
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        // Ojo ya no se usa la interfaz
+        SecretarioEmpleado secre = ctx.getBean("miSecretario", SecretarioEmpleado.class);
         System.out.println(secre.getTareas());
         System.out.println(secre.getInforme());
-        ctx.close();
+        System.out.println("Email "+secre.getEmail());
+        System.out.println("Name "+secre.getNombreEmpresa());
+
 
         /*ClassPathXmlApplicationContext ctx1 = new ClassPathXmlApplicationContext("applicationContext.xml");
         Empleados juan1 = ctx1.getBean("miempleado", Empleados.class);

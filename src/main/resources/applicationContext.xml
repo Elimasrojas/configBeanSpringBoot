@@ -20,9 +20,13 @@
     <property name="creacionInforme"/>
     la creacion  de la propiedad name se debe a public void setCreacionInforme pero sin el prefijo set
     y con la primera letra en minuscula
+
+    OJO los nombre de la propiedad  <property name="nombreEmpresa" deben ser iguales a los de la clase
      -->
     <bean id="miSecretario" class="com.example.IoC.primer.SecretarioEmpleado">
         <property name="creacionInforme" ref="miInforme"/>
+        <property name="email" value="secretario@correo.com" />
+        <property name="nombreEmpresa" value="LMS company" />
     </bean>
 
 </beans>
