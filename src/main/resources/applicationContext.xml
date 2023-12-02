@@ -13,4 +13,16 @@
         <constructor-arg ref="miInforme"/>
     </bean>
 
+    <!-- SecretarioEmpleado
+      public void setCreacionInforme(CreacionInforme creacionInforme) {
+        this.creacionInforme = creacionInforme;
+    }
+    <property name="creacionInforme"/>
+    la creacion  de la propiedad name se debe a public void setCreacionInforme pero sin el prefijo set
+    y con la primera letra en minuscula
+     -->
+    <bean id="miSecretario" class="com.example.IoC.primer.SecretarioEmpleado">
+        <property name="creacionInforme" ref="miInforme"/>
+    </bean>
+
 </beans>

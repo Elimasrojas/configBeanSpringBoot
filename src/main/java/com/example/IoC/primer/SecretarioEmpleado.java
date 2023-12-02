@@ -3,9 +3,9 @@ package com.example.IoC.primer;
 import com.example.IoC.inyecciondependencia.CreacionInforme;
 
 public class SecretarioEmpleado implements Empleados {
-    private final CreacionInforme creacionInforme;
+    private  CreacionInforme creacionInforme;
 
-    public SecretarioEmpleado(CreacionInforme creacionInforme) {
+    public void setCreacionInforme(CreacionInforme creacionInforme) {
         this.creacionInforme = creacionInforme;
     }
 
