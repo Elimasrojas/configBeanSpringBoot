@@ -15,7 +15,12 @@ public class ComercialExperimentado implements Empleados {
      * @Autowired busca si hay algumna clase que implemente creacionInformeFinanciero
      * en este casso InformeFinancieroTrim1.class desde la vbersion 4.3 la inyeccion de dependecias
      * no se requiere la anotacion ademas solo tiene que haber UNO SOLO CONTYRUCTOR
+     *
+     * por eso es sano private  final CreacionInformeFinanciero creacionInformeFinanciero;
+     * declararla final para que solo puedad crear uin contructor
      */
+
+
     @Autowired
     public ComercialExperimentado(CreacionInformeFinanciero creacionInformeFinanciero) {
         this.creacionInformeFinanciero = creacionInformeFinanciero;
