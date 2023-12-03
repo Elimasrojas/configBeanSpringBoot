@@ -9,8 +9,8 @@ public class MainConfiguration {
     /***
      * EmpleadosConfig
      * al llamar los bean de la clase el id es el nombre del metodo
-     * por es   Empleados emp=ctx.getBean("empleados", Empleados.class);
-     * se llama empleados y este a su vez retorna la istancia de
+     * por es   directorFinanciero emp=ctx.getBean("directorFinanciero", Empleados.class);
+     * se llama directorFinanciero y este a su vez retorna la istancia de
      * turn  new DirectorFinanciero(creacionInformeFinanciero());
      */
 
@@ -20,7 +20,7 @@ public class MainConfiguration {
         Empleados emp2=ctx.getBean("comercialExperimentado", Empleados.class);
         System.out.println(emp2==emp?"son el mismo obj":"son diferentes boj");*/
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
-        Empleados emp=ctx.getBean("empleados", Empleados.class);
+        Empleados emp=ctx.getBean("directorFinanciero", Empleados.class);
         System.out.println(emp.getTareas());
         System.out.println(emp.getInforme());
     }

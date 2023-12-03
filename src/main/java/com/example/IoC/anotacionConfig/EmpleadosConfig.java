@@ -13,7 +13,7 @@ public class EmpleadosConfig {
     }
 
     @Bean
-    public Empleados empleados(){
+    public Empleados directorFinanciero(){
         return  new DirectorFinanciero(creacionInformeFinanciero());
     }
 }
