@@ -1,6 +1,7 @@
 package com.example.IoC.ciclovida;
 
 import com.example.IoC.primer.DirectorEmpleado;
+import com.example.IoC.primer.Empleados;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class CicloVidabean {
@@ -18,7 +19,7 @@ public class CicloVidabean {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext3.xml");
         // Ojo ya no se usa la interfaz
-        DirectorEmpleado direct = ctx.getBean("miEmpleado", DirectorEmpleado.class);
+        Empleados direct = ctx.getBean("miEmpleado", DirectorEmpleado.class);
         System.out.println(direct.getTareas());
         System.out.println(direct.getInforme());
 
