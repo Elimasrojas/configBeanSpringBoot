@@ -13,7 +13,8 @@ public class ComercialExperimentado implements Empleados {
 
     /***
      * @Autowired busca si hay algumna clase que implemente creacionInformeFinanciero
-     * en este casso InformeFinancieroTrim1.class
+     * en este casso InformeFinancieroTrim1.class desde la vbersion 4.3 la inyeccion de dependecias
+     * no se requiere la anotacion ademas solo tiene que haber UNO SOLO CONTYRUCTOR
      */
     @Autowired
     public ComercialExperimentado(CreacionInformeFinanciero creacionInformeFinanciero) {
