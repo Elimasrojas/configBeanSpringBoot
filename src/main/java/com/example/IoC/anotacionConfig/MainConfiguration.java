@@ -6,7 +6,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainConfiguration {
-
+    /***
+     * EmpleadosConfig
+     * al llamar los bean de la clase el id es el nombre del metodo
+     * por es   Empleados emp=ctx.getBean("empleados", Empleados.class);
+     * se llama empleados y este a su vez retorna la istancia de
+     * turn  new DirectorFinanciero(creacionInformeFinanciero());
+     */
 
     public static void main(String[] args) {
         /*ApplicationContext ctx = new ClassPathXmlApplicationContext("anotacionesCicloDeVida.xml");
@@ -14,7 +20,7 @@ public class MainConfiguration {
         Empleados emp2=ctx.getBean("comercialExperimentado", Empleados.class);
         System.out.println(emp2==emp?"son el mismo obj":"son diferentes boj");*/
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
-        Empleados emp=ctx.getBean("comercialExperimentado", Empleados.class);
+        Empleados emp=ctx.getBean("empleados", Empleados.class);
         System.out.println(emp.getTareas());
         System.out.println(emp.getInforme());
     }
