@@ -17,6 +17,16 @@ public class DirectorEmpleado implements Empleados {
         this.creacionInforme = creacionInforme;
     }
 
+    /*metodo init*/
+
+    public void metodoInit(){
+        System.out.println("inicia el metodo init del Director");
+    }
+
+    /*Metodo destroy*/
+    public void metodoFinal(){
+        System.out.println("se va el metodo final del Director");
+    }
     public String getEmail() {
         return email;
     }

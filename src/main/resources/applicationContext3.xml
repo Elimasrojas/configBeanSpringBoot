@@ -1,0 +1,30 @@
+<!-- applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <!-- Creacion de la dependencia -->
+    <bean id="miInforme" class="com.example.IoC.inyecciondependencia.Informe">
+
+    </bean>
+
+
+
+    <!-- SecretarioEmpleado
+
+    scope= singleton  o prototype
+     -->
+    <bean id="miEmpleado" class="com.example.IoC.primer.DirectorEmpleado"
+        init-method="metodoInit" destroy-method="metodoFinal"
+    >
+        <constructor-arg  ref="miInforme"/>
+
+    </bean>
+
+</beans>
